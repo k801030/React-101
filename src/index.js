@@ -10,24 +10,20 @@ const user = {
     lastName: "Li"
 }
 
-
-const element2 = React.createElement(
-    'h1',
-    {className: 'greeting'},
-    'Hello, world! from React.createElement'
-)
-
-function tick() {
-    const element = (
-        <div>
-            <h1>Hello, world!</h1>
-            <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        </div>
-    );
-    ReactDOM.render(
-        element,
-        document.getElementById('root')
-    )
+class Welcome extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Hello, world!</h1>
+                <h2>This is {this.props.name}</h2>
+            </div>
+        )
+    }
 }
+    
+const element = <Welcome name="Vison Li"/>;
 
-setInterval(tick, 1000);
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+)
